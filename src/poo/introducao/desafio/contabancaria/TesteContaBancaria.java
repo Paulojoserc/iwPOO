@@ -1,16 +1,20 @@
 package poo.introducao.desafio.contabancaria;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class TesteContaBancaria {
 
 
-public static void main(String[] args) {
+public static void main(String[] args) throws ParseException {
 	Scanner sc = new Scanner(System.in);
-	
-	String aux; 
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	String aux, dataDeNascimento;
 	int opcao;
 	double valor;
 	List<ContaBancaria> contas = new ArrayList<>();
@@ -36,14 +40,18 @@ public static void main(String[] args) {
 				System.out.println("Digite o nome do cliente");
 				sc.next();
 				aux = sc.nextLine();
-				
-				contaBancaria = new ContaBancaria(null, aux, null, valor);
+				System.out.println("Digite a data de nascimento");
+				dataDeNascimento =  sc.nextLine();
+				Date date = sdf.parse(dataDeNascimento);
+				System.out.println("Digite o valor do deposito");
+				valor = sc.nextDouble();
+				contaBancaria = new ContaBancaria(aux, date, valor);
 				
 				break;
 			
 		
 			case 2:
-				
+				contaBancaria.saldoBancario();
 				break;
 			
 		
@@ -68,5 +76,10 @@ public static void main(String[] args) {
 	}while(opcao!=0) ;
 	
 	sc.close();
+}
+
+private static DateTimeFormatter DateTimeFormatter(String string) {
+	// TODO Auto-generated method stub
+	return null;
 }
 }

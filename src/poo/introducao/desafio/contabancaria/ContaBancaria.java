@@ -1,10 +1,13 @@
 package poo.introducao.desafio.contabancaria;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ContaBancaria {
 	Long codigo;
 	String nomeCliente;
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	Date dataDeNascimento;
 	double saldo;
 
@@ -14,6 +17,13 @@ public class ContaBancaria {
 
 	public ContaBancaria() {
 	}
+	public ContaBancaria(String nomeCliente, Date dataDeNascimento, double saldo) {
+		super();
+		this.nomeCliente = nomeCliente;
+		this.dataDeNascimento = dataDeNascimento;
+		this.saldo = saldo;
+	}
+
 
 	public ContaBancaria(Long codigo, String nomeCliente, Date dataDeNascimento, double saldo) {
 		super();
@@ -65,11 +75,12 @@ public class ContaBancaria {
 		System.out.println();
 	}
 	
-	public void verSaldo() {
+	public void saldoBancario() throws ParseException {
 		System.out.println();
 		System.out.println("          Dados Bancários");
 		System.out.println("Número da conta: "+ this.codigo);
 		System.out.println("Titular: "+this.nomeCliente);
+		System.out.println("Data de nascimento: "+sdf.parse(nomeCliente));
 		System.out.println(" Saldo: "+this.saldo);
 		System.out.println("      Fim da consulta");
 	}
