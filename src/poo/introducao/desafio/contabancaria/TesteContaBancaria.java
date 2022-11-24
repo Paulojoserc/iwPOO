@@ -17,8 +17,9 @@ public static void main(String[] args) throws ParseException {
 	String aux, dataDeNascimento;
 	int opcao;
 	double valor;
+	long numeroConta1, numeroConta2;
 	List<ContaBancaria> contas = new ArrayList<>();
-	ContaBancaria contaBancaria = null;
+	ContaBancaria contaBancaria = null, contaBancaria2 = null ;
 	
 	do {
 		System.out.println();
@@ -46,7 +47,7 @@ public static void main(String[] args) throws ParseException {
 				System.out.println("Digite o valor do deposito");
 				valor = sc.nextDouble();
 				contaBancaria = new ContaBancaria(aux, date, valor);
-				
+				System.out.println(contaBancaria.toString()); 
 				break;
 			
 		
@@ -58,15 +59,37 @@ public static void main(String[] args) throws ParseException {
 			case 3:
 				System.out.println("Digite o valor do deposito: ");
 				valor = sc.nextDouble();
-				contaBancaria.sacar(valor);
+				contaBancaria.depositar(valor);
 				break;
 			
 			
 			case 4:
+				System.out.println("Digite o valor do sacar: ");
+				valor = sc.nextDouble();
+				contaBancaria.sacar(valor);
 				break;
 			
 			
 			case 5:
+				System.out.println("Digite o número da conta de origem: ");
+				numeroConta1 = sc.nextLong();
+				if (numeroConta1!= contaBancaria.codigo) {
+					System.out.println("Conta de origem não existe");
+				}else {
+					contaBancaria.codigo = numeroConta1;	
+				}
+				
+				System.out.println("Digite o número da conta de destino: ");
+				numeroConta2 = sc.nextLong();
+				if (numeroConta2!= contaBancaria.codigo) {
+					System.out.println("Conta de destino não existe");
+				}else {
+					contaBancaria2.codigo = numeroConta2;	
+				}
+				
+				System.out.println("Digite o valor da transferência ");
+				valor = sc.nextDouble();
+				contaBancaria.transferencia(contaBancaria2, valor);
 				break;
 			
 				
@@ -78,8 +101,4 @@ public static void main(String[] args) throws ParseException {
 	sc.close();
 }
 
-private static DateTimeFormatter DateTimeFormatter(String string) {
-	// TODO Auto-generated method stub
-	return null;
-}
 }

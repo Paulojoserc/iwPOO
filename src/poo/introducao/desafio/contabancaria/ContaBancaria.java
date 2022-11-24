@@ -35,14 +35,14 @@ public class ContaBancaria {
 
 	public void transferencia(ContaBancaria destino, double valor) {
 		System.out.println();
-		System.out.println(" Realizando saque ");
-		System.out.println("Seu saldo anteior é: "+this.saldo);
-		System.out.println("Saldo anteior Destino é: "+destino.saldo);
+		System.out.println(" Realizando Transferencia ");
+		System.out.println("Seu saldo anteior conta de origem: "+this.saldo);
+		System.out.println("Saldo anteior da conta destino é: "+destino.saldo);
 		if ((this.saldo - valor) >= 0) {
 			this.saldo -= valor;
 			destino.saldo += valor;
-			System.out.println(" Saldo Posterior: "+this.saldo);
-			System.out.println(" Saldo Posterior: "+destino.saldo);
+			System.out.println(" Saldo Posterior  conta de origem: "+this.saldo);
+			System.out.println(" Saldo Posterior da conta destino é: "+destino.saldo);
 		}else {
 			System.out.println(" Desculpe saldo insuficiente");
 		}
@@ -80,20 +80,20 @@ public class ContaBancaria {
 		System.out.println("          Dados Bancários");
 		System.out.println("Número da conta: "+ this.codigo);
 		System.out.println("Titular: "+this.nomeCliente);
-		System.out.println("Data de nascimento: "+sdf.parse(nomeCliente));
+		System.out.println("Data de nascimento: "+sdf.format(dataDeNascimento));
 		System.out.println(" Saldo: "+this.saldo);
 		System.out.println("      Fim da consulta");
 	}
-	
 	@Override
 	public String toString() {
-
-		String s = "ContaBancaria [ ";
-		s += "Nome do Cliente: " + nomeCliente;
-		s += "; Numero da conta: " + codigo;
-		s += "; Saldo: " + this.saldo;
-		s += " ]";
-		return s;
+		String s= "Dados Bancaria : ";
+	s+=	" Número da conta:" + codigo;
+	s+= " Titular: " + nomeCliente; 
+	s+=" Data de nascimento: " + sdf.format(dataDeNascimento); 
+	s+=" Saldo: R$" +String.format("%.2f%n", saldo) ;
+		 return s;
 	}
+	
+	
 
 }
