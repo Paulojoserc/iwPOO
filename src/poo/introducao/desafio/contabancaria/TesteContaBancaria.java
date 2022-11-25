@@ -47,7 +47,8 @@ public static void main(String[] args) throws ParseException {
 				System.out.println("Digite o valor do deposito");
 				valor = sc.nextDouble();
 				contaBancaria = new ContaBancaria(aux, date, valor);
-				System.out.println(contaBancaria.toString()); 
+				System.out.println(contaBancaria.toString());
+				contas.add(contaBancaria);
 				break;
 			
 		

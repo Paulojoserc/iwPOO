@@ -18,7 +18,7 @@ public class ContaBancaria {
 	public ContaBancaria() {
 	}
 	public ContaBancaria(String nomeCliente, Date dataDeNascimento, double saldo) {
-		super();
+		this.codigo = codigo;
 		this.nomeCliente = nomeCliente;
 		this.dataDeNascimento = dataDeNascimento;
 		this.saldo = saldo;
@@ -26,7 +26,6 @@ public class ContaBancaria {
 
 
 	public ContaBancaria(Long codigo, String nomeCliente, Date dataDeNascimento, double saldo) {
-		super();
 		this.codigo = codigo;
 		this.nomeCliente = nomeCliente;
 		this.dataDeNascimento = dataDeNascimento;
