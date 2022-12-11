@@ -4,14 +4,14 @@ public class TestaCarro {
 	public static void main(String[] args) {
 		Carro c1 = new Carro();
 		Carro generico = new Carro();
+		c1.setMarca("bmw");
+		c1.setModelo("z4");
+		c1.setCor("preta");
+		c1.setAno(2022);
+		c1.setMotor("B58");
+		c1.setQuantidadedePortas(2);
+		c1.setValor(750_000);
 		
-		c1.marca = "bmw";
-		c1.modelo = "z4";
-		c1.cor = "preta";
-		c1.ano = 2022;
-		c1.motor = "B58";
-		c1.quantidadedePortas = 2;
-		c1.valor = 750_000;
 
 		
 		c1.acelerar();

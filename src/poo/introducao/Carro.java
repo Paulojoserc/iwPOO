@@ -1,14 +1,16 @@
 package poo.introducao;
 
 public class Carro {
-	String marca;
-	String modelo;
-	String cor;
-	int ano;
-	int quantidadedePortas;
-	String motor;
-	double valor;
-	double velocidade;
+private	String marca;
+private	String modelo;
+private	String cor;
+private	int ano;
+private	int quantidadedePortas;
+private	String motor;
+private	double valor;
+private	double velocidade;
+private boolean novo;
+
 
 	public Carro() {
 
@@ -23,6 +25,70 @@ public class Carro {
 		this.motor = motor;
 		this.valor = valor;
 		this.velocidade =0;
+	}
+	public String getMarca() {
+		return this.marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public String getModelo() {
+		return this.modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	public String getCor() {
+		return this.cor;
+	}
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+	public int getAno() {
+		return this.ano;
+	}
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	
+	public int getQuantidadedePortas() {
+		return quantidadedePortas;
+	}
+
+	public void setQuantidadedePortas(int quantidadedePortas) {
+		this.quantidadedePortas = quantidadedePortas;
+	}
+
+	public String getMotor() {
+		return motor;
+	}
+
+	public void setMotor(String motor) {
+		this.motor = motor;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public double getVelocidade() {
+		return velocidade;
+	}
+
+	public void setVelocidade(double velocidade) {
+		this.velocidade = velocidade;
+	}
+
+	public boolean isNovo() {
+		return novo;
+	}
+
+	public void setNovo(boolean novo) {
+		this.novo = novo;
 	}
 
 	public void acelerar() {
