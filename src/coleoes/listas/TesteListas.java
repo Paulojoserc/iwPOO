@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TesteListas {
+@SuppressWarnings("unused")
 public static void main(String[] args) {
 		
 		Integer[] numeros = {1,2,3,4,5,6,7,8,9};
