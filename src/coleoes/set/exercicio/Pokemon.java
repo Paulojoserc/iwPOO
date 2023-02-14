@@ -1,5 +1,7 @@
 package coleoes.set.exercicio;
 
+import java.util.Objects;
+
 public class Pokemon implements Comparable<Pokemon> {
 	private String nome;
 	private String tipo;
@@ -51,4 +53,5 @@ public class Pokemon implements Comparable<Pokemon> {
 	public int compareTo(Pokemon pokemon) {
 		
 		return this.getNome().compareToIgnoreCase(pokemon.getNome());
+}
 }
