@@ -10,6 +10,14 @@ create table funcionario(id bigint primary key not null, funcao varchar(100) not
 
 create table disciplina(id bigint primary key not null, nome varchar(100) not null,turno varchar(100) not null);
 
-alter table empresa add column funcionario bigint not null;
+alter table empresa add column funcionario_id bigint not null;
 
 alter table empresa add constraint fk_funcionario_id foreign key (funcionario_id) references funcionario(id);
+
+alter table funcionario add column pessoa_id bigint not null;
+
+alter table funcionario add constraint fk_pessoa_id foreign key (pessoa_id) references pessoa(id);
+
+alter table disciplina  add column funcionario_id bigint not null;
+
+alter table disciplina add constraint fk_funcionario_id foreign key (funcionario_id) references funcionario(id);
